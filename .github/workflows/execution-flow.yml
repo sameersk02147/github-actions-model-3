@@ -1,4 +1,4 @@
-name: Website Deployment
+name: Conditional workflow
 on:
   push:
     branches:
