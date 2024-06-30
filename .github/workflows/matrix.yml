@@ -8,10 +8,10 @@ jobs:
         node-version: [12, 14, 16]
         operation-systems: [ubuntu-latest, windows-latest]
         include:
-          - node-version: 18
+          - node-version: 18 #matrix run on ubuntu 18 additionally
             operation-systems: ubuntu-latest
         exclude:
-          - node-version: 12
+          - node-version: 12  #matrix wont run on win 12
             operation-systems: windows-latest
     runs-on: ${{ matrix.operation-systems }}
     steps:
