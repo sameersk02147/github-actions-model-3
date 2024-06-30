@@ -1,0 +1,20 @@
+name: Metrix Demo
+on: Push
+jobs:
+  build:
+    strategy:
+      matrix:
+        node-version: [12, 14, 16]
+        operation-systems: [ubuntu-latest, windows-latest]
+    runs-on: {{ metrix.operation-systems }}
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install Nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install dependencies
+        run: npm cli
+      - name: build project
+        run: npm run build
