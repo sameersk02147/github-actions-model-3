@@ -10,10 +10,10 @@ on:
     # secrets:
     #   some-secrets:   #calling secret for this job
     #     required: false
-  outputs:
-    result:
-      description: The result of the deployment operation
-      value: ${{ jobs.deploy.outputs.outcome }}
+    outputs:
+      result: 
+        description: The result of the deployment operation
+        value: ${{ jobs.deploy.outputs.outcome }}
 jobs:
   deploy:
     outputs:
