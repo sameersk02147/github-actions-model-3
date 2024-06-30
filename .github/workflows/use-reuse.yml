@@ -74,12 +74,12 @@ jobs:
       artifact-name: dist-files
     # secrets:    
     #   some-secrets: ${{ secrets.some-secrets }} #referring the secret provided in reusable workflow file
-  print-deploy-results:
+  print-deploy-result:
     needs: deploy
     runs-on: ubuntu-latest
     steps:
       - name: print deploy output
-        run: echo "{{ needs.deploy.outputs.result }}"
+        run: echo "${{ needs.deploy.outputs.result }}"
   report:
     needs: [lint, deploy]
     if: failure() #run only any previous job failes

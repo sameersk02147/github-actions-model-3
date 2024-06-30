@@ -17,7 +17,7 @@ on:
 jobs:
   deploy:
     outputs:
-      outcome: ${{ steps.set-results.outputs.step-result }}
+      outcome: ${{ steps.set-result.outputs.step-result }}
     runs-on: ubuntu-latest
     steps:
       - name: Upload artifacts
@@ -29,5 +29,5 @@ jobs:
       - name: output information
         run: echo "deploying & uploading"
       - name: set result output
-        id: set-results
+        id: set-result
         run: echo "step-result=success" >> $GITHUB_OUTPUT
